@@ -1,19 +1,19 @@
-class Solution:
-    def pivotIndex(self, nums):
+class Solution :
+    def pivotIndex(self , nums):
 
         total = sum(nums)
-        left_sum = 0
+        left = 0
 
         for i in range(len(nums)):
+            right = total - left - nums[i]
 
-            right_sum = total - left_sum - nums[i]
-
-            if left_sum == right_sum:
+            if left == right:
                 return i
 
-            left_sum = left_sum + nums[i]
+            left += nums[i]     
 
         return -1
+    
 
 # Synced seamlessly with LeetHub Pro
 # Pro features: https://bit.ly/leethubpro | Free version: https://bit.ly/leethubv4
