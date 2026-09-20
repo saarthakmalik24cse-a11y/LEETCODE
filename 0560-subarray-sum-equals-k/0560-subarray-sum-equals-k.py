@@ -1,23 +1,24 @@
-class Solution:
-    def subarraySum(self, nums, k):
+class Solution :
+    def subarraySum(self,nums,k):
 
-        seen = {0: 1}
+        count = {0:1}
 
-        prefix_sum = 0
-        count = 0
+        prefix = 0
+        answer = 0
 
         for num in nums:
+            prefix += num
 
-            prefix_sum += num
+            if prefix - k in count:
+                answer += count[prefix - k]
 
-            need = prefix_sum - k
+            count[prefix] = count.get(prefix , 0) + 1
 
-            if need in seen:
-                count += seen[need]
+        return answer
 
-            seen[prefix_sum] = seen.get(prefix_sum, 0) + 1
 
-        return count
+
+
 
 # Synced seamlessly with LeetHub Pro
 # Pro features: https://bit.ly/leethubpro | Free version: https://bit.ly/leethubv4
