@@ -1,21 +1,22 @@
-class Solution:
-    def twoSum(self, numbers, target):
+class Solution :
+    def twoSum(self,numbers,target):
 
         left = 0
-        right = len(numbers) - 1
+        right = len(numbers)-1
 
-        while left < right:
+        while left < right :
+            total = numbers[left] + numbers[right]
 
-            current_sum = numbers[left] + numbers[right]
+            if total == target:
+                return[left + 1, right + 1]
 
-            if current_sum == target:
-                return [left + 1, right + 1]
-
-            elif current_sum < target:
+            elif total < target:
                 left += 1
-
             else:
-                right -= 1
+                right -=1
+
+
+
 
 # Synced seamlessly with LeetHub Pro
 # Pro features: https://bit.ly/leethubpro | Free version: https://bit.ly/leethubv4
