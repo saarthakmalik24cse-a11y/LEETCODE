@@ -1,17 +1,17 @@
-class Solution:
-    def isSubsequence(self, s, t):
+class Solution :
+    def isSubsequence(self,s,t):
+        i = 0
+        j = 0
 
-        left = 0
-        right = 0
+        while i < len(s) and j < len(t):
+            if s[i]==t[j]:
+                i +=1
+            j+=1
 
-        while left < len(s) and right < len(t):
+        return i == len(s)
 
-            if s[left] == t[right]:
-                left += 1
 
-            right += 1
 
-        return left == len(s)
 
 # Synced seamlessly with LeetHub Pro
 # Pro features: https://bit.ly/leethubpro | Free version: https://bit.ly/leethubv4
