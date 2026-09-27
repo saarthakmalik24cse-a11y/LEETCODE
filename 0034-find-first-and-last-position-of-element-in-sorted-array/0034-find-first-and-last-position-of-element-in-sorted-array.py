@@ -22,6 +22,7 @@ class Solution:
             else:
                 right = mid - 1
 
+
         # Find last position
         left = 0
         right = len(nums) - 1
